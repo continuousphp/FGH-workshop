@@ -22,5 +22,7 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
+      - name: tag
+        run: docker tag ena:latest 047760725625.dkr.ecr.us-east-1.amazonaws.com/fgh-demo:latest
       - name: push
         run: docker push 047760725625.dkr.ecr.us-east-1.amazonaws.com/fgh-demo:latest

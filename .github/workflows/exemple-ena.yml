@@ -1,0 +1,7 @@
+on:
+  push:
+    branches:
+      - ena-test
+jobs:
+  build:
+    docker build -t demo

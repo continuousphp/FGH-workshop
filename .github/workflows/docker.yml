@@ -22,5 +22,5 @@ jobs:
       - name: push Docker image
         run: |
           docker build -t fgh-demo .
-          docker tag demo:latest 047760725625.dkr.ecr.us-east-1.amazonaws.com/fgh-demo:latest
+          docker tag fgh-demo:latest 047760725625.dkr.ecr.us-east-1.amazonaws.com/fgh-demo:latest
           docker push 047760725625.dkr.ecr.us-east-1.amazonaws.com/fgh-demo:latest

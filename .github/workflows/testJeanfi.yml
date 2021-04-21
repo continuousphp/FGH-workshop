@@ -1,0 +1,9 @@
+
+
+on: 
+  push:
+    - main
+name: CI / CD
+jobs: 
+  deploy:
+    name: myDeployment

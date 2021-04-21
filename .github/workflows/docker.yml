@@ -1,0 +1,24 @@
+on: 
+  - push
+name: asn
+  
+jobs: 
+  deploy: 
+    name: push image aws
+    runs-on: ubuntu-18.04
+    steps: 
+      - name: Configure AWS ECR credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.ECR_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.ECR_ACCESS_KEY_SECRET }}
+          aws-region: us-east-1
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: push Docker image
+        run: |
+          docker build -t demo .
+          docker tag demo:latest 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest
+          docker push 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest

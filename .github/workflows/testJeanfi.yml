@@ -1,8 +1,6 @@
-
-
 on: 
   push:
-    - main
+    - jeanfi-branch
 name: CI / CD
 jobs: 
   deploy:

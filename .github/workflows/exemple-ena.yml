@@ -15,3 +15,7 @@ jobs:
         run: docker build -t ena .
       - name: push
         run: docker push 047760725625.dkr.ecr.us-east-1.amazonaws.com/fgh-demo:latest
+        with:
+          aws-access-key-id: ${{ secrets.ECR_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.ECR_ACCESS_KEY_SECRET }}
+          aws-region: us-east-1

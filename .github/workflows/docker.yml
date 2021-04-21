@@ -7,6 +7,8 @@ jobs:
     name: push image aws
     runs-on: ubuntu-18.04
     steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Configure AWS ECR credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:

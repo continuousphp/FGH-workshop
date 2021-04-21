@@ -1,6 +1,6 @@
 # FGH-workshop
 
-## Example:
+## Example
 
 ### build a docker image
 docker build -t demo .

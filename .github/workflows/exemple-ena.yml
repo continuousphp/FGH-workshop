@@ -4,4 +4,7 @@ on:
       - ena-test
 jobs:
   build:
-    run: docker build -t demo
+    name: build
+    runs-on: ubuntu-18.04
+    steps:
+      run: docker build -t demo
